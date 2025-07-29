@@ -25,7 +25,7 @@ blenderproc quickstart # test install
 
 # Go to BlenderProc folder and pull this repo
 Place under a ./models folder your .ply files for example, the YCB-V fine_models:
-https://drive.google.com/file/d/1l0BsaZgmtuRH_xIXE-0lO9j3T6P59g9u/view?usp=sharing
+[https://drive.google.com/file/d/1l0BsaZgmtuRH_xIXE-0lO9j3T6P59g9u/view?usp=sharing](https://huggingface.co/datasets/bop-benchmark/ycbv/resolve/main/ycbv_models.zip)
 
 
 
