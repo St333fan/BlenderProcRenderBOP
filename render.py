@@ -11,13 +11,13 @@ import argparse
 def main():
     # Parse command line arguments
     parser = argparse.ArgumentParser(description='BlenderProc object rendering pipeline')
-    parser.add_argument('--object_folder', type=str, default='./examples/basics/camera_object_pose',
+    parser.add_argument('--object_folder', type=str, default='./models',
                         help='Path to folder containing 3D objects')
     parser.add_argument('--num_cameras', type=int, default=10,
                         help='Number of cameras for horizontal, top, and bottom views')
     parser.add_argument('--surface_type', type=str, choices=['textured', 'generated'], default='textured',
                         help='Type of surface to use: textured (from files) or generated (procedural)')
-    parser.add_argument('--texture_folder', type=str, default='/home/st3fan/Downloads/Plastic010_4K-JPG/',
+    parser.add_argument('--texture_folder', type=str, default='./Plastic010_4K-JPG/',
                         help='Path to folder containing texture files (only used if surface_type is textured)')
     parser.add_argument('--output', type=str, default='./output',
                         help='Output directory for rendered images and annotations')
