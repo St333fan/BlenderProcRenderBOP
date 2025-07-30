@@ -354,9 +354,6 @@ def render_horizontal_cameras(obj, distance, num_cameras, obj_idx, phase_name, o
 
 def render_top_cameras(obj, distance, num_cameras, angle_deg, obj_idx, phase_name, output_dir):
     """Render from top cameras at specified angle focusing on object's bbox center."""
-    import numpy as np
-    import mathutils
-    import blenderproc as bproc
 
     # Compute bounding box center in world coordinates
     bbox = obj.get_bound_box()  # Local-space bounding box corners
@@ -407,7 +404,7 @@ def render_top_cameras(obj, distance, num_cameras, angle_deg, obj_idx, phase_nam
     # Render all camera poses at once
     data = bproc.renderer.render()
     
-    # Write BOP output for all frames (single call, positional args!)
+    # Write BOP output for all frames
     bproc.writer.write_bop(
         output_dir,
         [obj],
@@ -422,9 +419,6 @@ def render_top_cameras(obj, distance, num_cameras, angle_deg, obj_idx, phase_nam
 
 def render_bottom_cameras(obj, distance, num_cameras, angle_deg, obj_idx, phase_name, output_dir):
     """Render from bottom cameras at specified angle (looking up) focused on bbox center."""
-    import numpy as np
-    import mathutils
-    import blenderproc as bproc
 
     # Compute bounding box center in world coordinates
     bbox = obj.get_bound_box()
@@ -509,11 +503,7 @@ def make_surface_transparent(surface):
     material.shadow_method = 'NONE'  # Disable shadows from surface
     
 def create_textured_surface(texture_path="/home/st3fan/Downloads/Plastic010_4K-JPG/"):
-    """Create a structured surface (Oberfläche) with plastic texture from files
-    
-    Args:
-        texture_path (str): Path to the directory containing texture files
-    """
+    """Create a structured surface (Oberfläche) with plastic texture from file"""
     
     # Create a plane
     bpy.ops.mesh.primitive_plane_add(size=20, location=(0, 0, -0.02))
